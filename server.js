@@ -50,6 +50,16 @@ app.post('/users', (req, res) => {
     });
 });
 
+app.delete('/users/:id', (req, res) => {
+    const { id } = req.params;
+
+    res.json({
+        success: true,
+        message: `User ${id} deleted`
+    });
+});
+
+
 app.use((req, res) => {
     res.status(404).json({
         success: false,
